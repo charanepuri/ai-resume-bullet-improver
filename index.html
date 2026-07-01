@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+        <meta
+            name="description"
+            content="AI Resume Bullet Improver helps transform simple resume points into professional, ATS-friendly bullet points using AI.">
+
+        <meta
+            name="keywords"
+            content="AI Resume Builder, Resume Improver, ATS Resume, AI Resume Assistant, OpenAI, JavaScript">
+
+        <meta
+            name="author"
+            content="Charan Teja Epuri">
+
+        <title>AI Resume Bullet Improver</title>
+
+        <!-- Google Fonts -->
+
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com">
+
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- Font Awesome -->
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <!-- Font Awesome -->
+         <link rel="icon" type="image/x-icon" href="./assets/icons/logo.png">
+
+        <!-- CSS -->
+
+        <link
+            rel="stylesheet"
+            href="css/style.css">
+
+        <link
+            rel="stylesheet"
+            href="css/responsive.css">
+    </head>
+
+    <body>
+
+        <!-- ========================= -->
+        <!-- Navbar -->
+        <!-- ========================= -->
+
+        <header class="header">
+
+            <nav class="navbar container">
+
+    <!-- Logo -->
+
+    <a
+        href="#"
+        class="logo">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <span>ResumeAI</span>
+
+    </a>
+
+    <!-- Navigation -->
+
+    <ul
+        class="nav-links"
+        id="navLinks">
+
+        <li><a href="#hero">Home</a></li>
+
+        <li><a href="#improver">Improver</a></li>
+
+        <li><a href="#verbs">Action Verbs</a></li>
+
+        <li><a href="#features">Features</a></li>
+
+    </ul>
+
+    <!-- Right Side -->
+
+    <div class="nav-actions">
+
+        <button
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Toggle Theme">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Toggle Navigation">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</nav>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- Hero -->
+        <!-- ========================= -->
+
+        <section
+            id="hero"
+            class="hero">
+
+            <div class="container hero-content">
+
+                <h1>
+                    AI Resume Bullet Improver
+                </h1>
+
+                <p>
+                    Transform ordinary resume points into professional,
+                    ATS-friendly achievements powered by Artificial Intelligence.
+                </p>
+
+                <a
+                    href="#improver"
+                    class="btn primary-btn">
+
+                    Start Improving
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Resume Improver -->
+        <!-- ========================= -->
+
+        <section
+            id="improver"
+            class="resume-section">
+
+            <div class="container">
+
+                <h2>Improve Your Resume Bullet</h2>
+
+                <div class="resume-card">
+
+                    <div class="form-group">
+
+                        <label for="resumeInput">
+                            Resume Bullet
+                        </label>
+
+                        <textarea
+                            id="resumeInput"
+                            placeholder="Example: Built a login page using HTML and CSS."
+                            rows="6"></textarea>
+
+                        <div class="counter">
+
+                            <span id="wordCount">
+                                0 Words
+                            </span>
+
+                            <span id="charCount">
+                                0 Characters
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="styleSelect">
+                                Writing Style
+                            </label>
+
+                            <select id="styleSelect">
+
+                                <option>Professional</option>
+                                <option>ATS Friendly</option>
+                                <option>Technical</option>
+                                <option>Leadership</option>
+                                <option>Concise</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="levelSelect">
+                                Experience Level
+                            </label>
+
+                            <select id="levelSelect">
+
+                                <option>Student</option>
+                                <option>Fresher</option>
+                                <option>Intern</option>
+                                <option>Junior Developer</option>
+                                <option>Experienced</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="techSelect">
+                                Technology
+                            </label>
+
+                            <select id="techSelect">
+
+                                <option>General</option>
+                                <option>Frontend</option>
+                                <option>Backend</option>
+                                <option>Python</option>
+                                <option>Django</option>
+                                <option>JavaScript</option>
+                                <option>React</option>
+                                <option>Angular</option>
+                                <option>Full Stack</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <button
+                            id="improveBtn"
+                            class="btn primary-btn">
+
+                            Improve Resume Point
+
+                        </button>
+
+                        <button
+                            id="clearBtn"
+                            class="btn secondary-btn">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Result -->
+        <!-- ========================= -->
+
+        <section class="result-section">
+
+            <div class="container">
+
+                <h2>Improved Resume Bullet</h2>
+
+                <div class="result-card">
+
+                    <p id="resultText">
+
+                        Your AI-generated resume bullet will appear here.
+
+                    </p>
+
+                    <div class="button-group">
+
+                        <button
+                            id="copyBtn"
+                            class="btn">
+
+                            Copy
+
+                        </button>
+
+                        <button
+                            id="regenerateBtn"
+                            class="btn">
+
+                            Regenerate
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Action Verbs -->
+        <!-- ========================= -->
+
+        <section
+            id="verbs"
+            class="verbs-section">
+
+            <div class="container">
+
+                <h2>Powerful Action Verbs</h2>
+
+                <div class="verbs-grid">
+
+                    <span>Developed</span>
+                    <span>Implemented</span>
+                    <span>Designed</span>
+                    <span>Optimized</span>
+                    <span>Integrated</span>
+                    <span>Engineered</span>
+                    <span>Created</span>
+                    <span>Enhanced</span>
+                    <span>Automated</span>
+                    <span>Analyzed</span>
+                    <span>Led</span>
+                    <span>Collaborated</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Features -->
+        <!-- ========================= -->
+
+        <section
+            id="features"
+            class="features">
+
+            <div class="container">
+
+                <h2>Why Use ResumeAI?</h2>
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                        <h3>AI Powered</h3>
+
+                        <p>
+                            Generate professional resume bullets instantly.
+                        </p>
+
+                    </article>
+
+                    <article class="feature-card">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <h3>ATS Friendly</h3>
+
+                        <p>
+                            Improve resume quality for Applicant Tracking Systems.
+                        </p>
+
+                    </article>
+
+                    <article class="feature-card">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        <h3>Fast Results</h3>
+
+                        <p>
+                            Receive optimized resume points within seconds.
+                        </p>
+
+                    </article>
+
+                    <article class="feature-card">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        <h3>Copy Instantly</h3>
+
+                        <p>
+                            Copy improved bullets with one click.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+       <footer class="footer">
+
+    <div class="container">
+
+        <!-- Footer Top -->
+
+        <div class="footer-top">
+
+            <h2>AI Resume Bullet Improver</h2>
+
+            <p class="footer-tagline">
+
+                Transform simple resume points into
+                professional, ATS-friendly achievements
+                powered by Artificial Intelligence.
+
+            </p>
+
+        </div>
+
+        <!-- Footer Grid -->
+
+        <div class="footer-grid">
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h3>About</h3>
+
+                <p>
+
+                    &copy; 2026 Built by
+
+                    <strong>Epuri Charan Teja</strong>
+
+                </p>
+
+                <p>
+
+                    Developed using
+
+                    HTML5, CSS3,
+
+                    JavaScript (ES6+),
+
+                    Fetch API,
+
+                    Local Storage,
+
+                    Groq AI API.
+
+                </p>
+
+            </div>
+
+            <!-- Project -->
+
+            <div class="footer-column">
+
+                <h3>Project</h3>
+
+                <ul>
+
+                    <li>
+
+                        <a
+                            href="#"
+                            target="_blank">
+
+                            Live Demo
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="#"
+                            target="_blank">
+
+                            Documentation
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="#"
+                            target="_blank">
+
+                            GitHub Repository
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Connect -->
+
+            <div class="footer-column">
+
+                <h3>Connect</h3>
+
+                <ul>
+
+                    <li>
+
+                        <a
+                            href="https://github.com/charanepuri"
+                            target="_blank">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            GitHub
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="https://www.linkedin.com/in/charan-teja-972aa9231"
+                            target="_blank">
+
+                            <i class="fa-brands fa-linkedin"></i>
+
+                            LinkedIn
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Portfolio -->
+
+            <div class="footer-column">
+
+                <h3>Explore Portfolios</h3>
+
+                <ul>
+
+                    <li>
+
+                        <a
+                            href="https://portfolio-site-django.onrender.com"
+                            target="_blank">
+
+                            Django Portfolio
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="https://charan-react-portfolio.vercel.app"
+                            target="_blank">
+
+                            React Portfolio
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="https://flask-developer-dashboard-portfolio.onrender.com"
+                            target="_blank">
+
+                            Flask Portfolio
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+
+                Made with
+
+                <i class="fa-solid fa-heart"></i>
+
+                by
+
+                <strong>Epuri Charan Teja</strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+        <div id="toast" class="toast">Message</div>
+
+        <script src="js/storage.js"></script>
+
+        <script src="js/ui.js"></script>
+
+        <script src="js/api.js"></script>
+
+        <script src="js/app.js"></script>
+
+
+    </body>
+
+</html>
